@@ -9,11 +9,14 @@ import org.springframework.web.bind.annotation.RestController;
 import com.danilo.crudspring.model.Course;
 import com.danilo.crudspring.repository.CourseRepository;
 
+import lombok.AllArgsConstructor;
+
 @RestController
 @RequestMapping("/api/courses")
+@AllArgsConstructor
 public class CourseController {
     
-    private CourseRepository courseRepository;
+    private final CourseRepository courseRepository;
     
     @GetMapping
     public List<Course> list() {
